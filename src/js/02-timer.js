@@ -16,8 +16,8 @@ startBtn.disabled = true;
 
 Notiflix.Notify.init({
   width: '350px',
-  position: 'center-center',
-  timeout: 10000,
+  position: 'center-top',
+  timeout: 5000,
 });
 
 const options = {
