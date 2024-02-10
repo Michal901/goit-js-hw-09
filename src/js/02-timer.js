@@ -7,7 +7,7 @@ const daysSpan = document.querySelector('[data-days]');
 const hoursSpan = document.querySelector('[data-hours]');
 const minutesSpan = document.querySelector('[data-minutes]');
 const secondsSpan = document.querySelector('[data-seconds]');
-const input = document.querySelector('#datetime-picker');
+
 const currentTime = new Date();
 let timerID;
 let selectedDate = '';
@@ -15,9 +15,9 @@ let selectedDate = '';
 startBtn.disabled = true;
 
 Notiflix.Notify.init({
-  width: '350px',
+  width: '300px',
   position: 'center-top',
-  timeout: 5000,
+  timeout: 4000,
 });
 
 const options = {
@@ -32,7 +32,7 @@ const options = {
 
     if (selectedDate <= currentTime) {
       startBtn.disabled = true;
-      Notiflix.Notify.info('Please select a date in the future!');
+      Notiflix.Notify.warning('Please select a date in the future!');
     } else {
       startBtn.disabled = false;
     }
