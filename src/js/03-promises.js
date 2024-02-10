@@ -3,9 +3,9 @@ import Notiflix from 'notiflix';
 const form = document.querySelector('.form');
 
 Notiflix.Notify.init({
-  width: '350px',
+  width: '300px',
   position: 'right-top',
-  timeout: 2500,
+  timeout: 3500,
 });
 
 form.addEventListener('submit', function (event) {
