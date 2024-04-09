@@ -4,7 +4,7 @@ const form = document.querySelector('.form');
 
 Notiflix.Notify.init({
   width: '300px',
-  position: 'right-top',
+  // position: 'right-top',
   timeout: 3500,
 });
 
@@ -21,16 +21,17 @@ form.addEventListener('submit', function (event) {
 function createPromises(amount, delay, step, position = 1) {
   if (position <= amount) {
     const currentDelay = delay + (position - 1) * step;
+
     createPromise(position, currentDelay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
-          `✅ Fulfilled promise ${position} in ${delay}ms`
+          `✅ Fulfilled promise ${position} in ${currentDelay}ms`
         );
         createPromises(amount, delay, step, position + 1);
       })
       .catch(({ position, delay }) => {
         Notiflix.Notify.failure(
-          `❌ Rejected promise ${position} in ${delay}ms`
+          `❌ Rejected promise ${position} in ${currentDelay}ms`
         );
         createPromises(amount, delay, step, position + 1);
       });
